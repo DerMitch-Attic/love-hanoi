@@ -10,22 +10,25 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="440"
+   width="550"
    height="40"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.5 r10040"
-   sodipodi:docname="Neues Dokument 1">
+   sodipodi:docname="base.svg"
+   inkscape:export-filename="/home/mitch/Projekte/love-hanoi/img/base.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <defs
      id="defs4">
     <linearGradient
        id="linearGradient3757">
       <stop
-         style="stop-color:#000050;stop-opacity:0.20430107;"
+         style="stop-color:#174550;stop-opacity:1;"
          offset="0"
          id="stop3759" />
       <stop
-         style="stop-color:#000050;stop-opacity:0;"
+         style="stop-color:#ffffff;stop-opacity:1;"
          offset="1"
          id="stop3761" />
     </linearGradient>
@@ -38,7 +41,7 @@
        x2="249.64285"
        y2="1034.1954"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1,0,0,1.4441624,0,-449.49463)" />
+       gradientTransform="matrix(1.2494737,0,0,1.4441807,-0.12167558,-449.51348)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -47,9 +50,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="151.11478"
-     inkscape:cy="35.151285"
+     inkscape:zoom="2.0682873"
+     inkscape:cx="239.75021"
+     inkscape:cy="67.433221"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -76,15 +79,15 @@
      id="layer1"
      transform="translate(0,-1012.3622)">
     <rect
-       style="fill:#000050;fill-opacity:0.27756659;fill-rule:evenodd;stroke:#000000;stroke-width:0.7454738;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       style="fill:#174550;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.83329487;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="rect2985"
-       width="439.02573"
-       height="10.573197"
-       x="0.48712954"
-       y="1041.3018" />
+       width="548.55109"
+       height="10.573332"
+       x="0.48697996"
+       y="1041.3019" />
     <path
-       style="fill:url(#linearGradient3763);fill-opacity:1;stroke:#000000;stroke-width:1.20051908px;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1"
-       d="m 0.67706855,1041.4041 24.94951245,-28.6254 389.390599,-0.7736 24.77131,28.8832 z"
+       style="fill:url(#linearGradient3763);fill-opacity:1;stroke:#000000;stroke-width:1.3419472px;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1"
+       d="m 0.72430377,1041.4042 31.17375923,-28.6257 486.533327,-0.7737 30.95109,28.8836 z"
        id="path3755"
        inkscape:connector-curvature="0" />
   </g>

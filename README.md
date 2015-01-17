@@ -12,3 +12,7 @@ Towers of hanoi using LÖVE (just a test)
     cd love-hanoid
     love .
 ```
+
+## Credis
+
+* Background image: Cropped and scaled version of an image by [Angela Sevin](https://www.flickr.com/photos/angela7/80779353)

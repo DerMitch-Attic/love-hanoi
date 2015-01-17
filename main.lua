@@ -13,7 +13,7 @@ font_won = love.graphics.newFont(40)
 -- Number of moves
 moves = 0
 -- Show debug information?
-DEBUG = false
+DEBUG = true
 
 -- Stack of block of every (Please note: Indexes start by 1, not 0)
 tower_blocks = {
@@ -41,6 +41,7 @@ function love.load()
     icon = love.graphics.newImage("img/icon.png")
     base = love.graphics.newImage("img/base.png")
     tower = love.graphics.newImage("img/tower.png")
+    background = love.graphics.newImage("img/background.png")
 
     love.window.setTitle("Towers of Hanoi")
     love.window.setIcon(icon:getData())
@@ -189,12 +190,12 @@ function love.draw(dt)
 
     -- Initialize
     love.graphics.setFont(font_title)
-    love.graphics.setColor(0, 0, 0)
-    love.graphics.setBackgroundColor(250, 250, 250)
+    love.graphics.setColor(255, 255, 255)
+    love.graphics.draw(background, 0, 0)
 
     -- Status texts
-    love.graphics.print("Türme von Hanoi", 10, 10)
-    love.graphics.printf(moves .. " Züge", width - 110, 10, 100, "right")
+    love.graphics.print("Towers of Hanoi", 30, 30)
+    love.graphics.printf(moves .. " Moves", width - 130, 30, 100, "right")
     if DEBUG then
         love.graphics.printf(width .. "x" .. height, width - 110, height - 35, 100, "right")
     end
@@ -208,26 +209,27 @@ function love.draw(dt)
 
     if DEBUG then
         if tower_hover == 1 then
-            love.graphics.print("Hover 1", 10, height - 55)
+            love.graphics.print("Hover 1", 30, height - 55)
         elseif tower_hover == 2 then
-            love.graphics.print("Hover 2", 10, height - 55)
+            love.graphics.print("Hover 2", 30, height - 55)
         elseif tower_hover == 3 then
-            love.graphics.print("Hover 3", 10, height - 55)
+            love.graphics.print("Hover 3", 30, height - 55)
         else
-            love.graphics.print("No Hover", 10, height - 55)
+            love.graphics.print("No Hover", 30, height - 55)
         end
         if tower_selected == 1 then
-            love.graphics.print("Selected 1", 10, height - 35)
+            love.graphics.print("Selected 1", 30, height - 35)
         elseif tower_selected == 2 then
-            love.graphics.print("Selected 2", 10, height - 35)
+            love.graphics.print("Selected 2", 30, height - 35)
         elseif tower_selected == 3 then
-            love.graphics.print("Selected 3", 10, height - 35)
+            love.graphics.print("Selected 3", 30, height - 35)
         else
-            love.graphics.print("No selection", 10, height - 35)
+            love.graphics.print("No selection", 30, height - 35)
         end
     end
 
     -- Tower base
+    love.graphics.setColor(255, 255, 255)
     love.graphics.draw(base, base_left, base_top)
 
     -- Hover effect
