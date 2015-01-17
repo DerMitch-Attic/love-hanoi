@@ -13,7 +13,7 @@ font_won = love.graphics.newFont(40)
 -- Number of moves
 moves = 0
 -- Show debug information?
-DEBUG = true
+DEBUG = false
 
 -- Stack of block of every (Please note: Indexes start by 1, not 0)
 tower_blocks = {
@@ -35,6 +35,8 @@ tower_height = 300
 -- Coordinations of last click
 mousePressX = nil
 mousePressY = nil
+
+show_invalid_move = false
 
 -- Load images
 function love.load()
@@ -67,7 +69,7 @@ function love.update()
 
     -- Coordinates of the tower base (bar on the bottom)
     base_left = width / 2 - base:getWidth() / 2
-    base_top = height - (width / 15) - base:getHeight()
+    base_top = height - (width / 10) - base:getHeight()
 
     -- Calculate the bounding boxes of all 3 towers
     tower1x1 = width / 4 * 1 - tower_width * 2
@@ -102,6 +104,7 @@ function love.update()
     if mousePressX and mousePressY then
         mousePressX = nil
         mousePressY = nil
+        show_invalid_move = false
 
         -- Check which tower was clicked if any
         if (mouseX > tower1x1 and mouseY > tower1y1) and (mouseX < tower1x2 and mouseY < tower1y2) then
@@ -127,6 +130,11 @@ function love.update()
                 -- Get the highest item from the stack and remove it
                 block_to_move = table.remove(blocks_selected)
 
+                if block_to_move == nil then
+                    print("Block to move is nil, looks like a state bug")
+                    return
+                end
+
                 -- Get the highest item from the next stack
                 next_block = blocks_clicked[#blocks_clicked]
 
@@ -146,6 +154,8 @@ function love.update()
                             "next_block: ", next_block
                     )
                     table.insert(blocks_selected, block_to_move)
+                    tower_selected = nil
+                    show_invalid_move = true
                 end
 
                 -- Let the player select a new stack
@@ -198,6 +208,10 @@ function love.draw(dt)
     love.graphics.printf(moves .. " Moves", width - 130, 30, 100, "right")
     if DEBUG then
         love.graphics.printf(width .. "x" .. height, width - 110, height - 35, 100, "right")
+    end
+
+    if show_invalid_move then
+        love.graphics.printf("Invalid move!", width / 2 - 100, height / 4, 200, "center")
     end
 
     -- Hurrah!
