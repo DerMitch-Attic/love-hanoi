@@ -38,8 +38,12 @@ mousePressY = nil
 
 -- Load images
 function love.load()
+    icon = love.graphics.newImage("img/icon.png")
     base = love.graphics.newImage("img/base.png")
     tower = love.graphics.newImage("img/tower.png")
+
+    love.window.setTitle("Towers of Hanoi")
+    love.window.setIcon(icon:getData())
 end
 
 --[[
